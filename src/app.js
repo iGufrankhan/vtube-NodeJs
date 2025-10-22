@@ -44,9 +44,12 @@ import Commentrouter from './routes/comment.routes.js'
 app.use('/api/v1/healthcheck',healthcheckRouter)
 
 app.use('/api/v1/users',userRouter)
-
-
 app.use('/api/v1/comments',Commentrouter)
+
+
+
+
+
 
 
 

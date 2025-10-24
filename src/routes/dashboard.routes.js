@@ -5,11 +5,11 @@ import {
 } from "../controllers/dashboard.controllers.js"
 import {verifyjwt} from "../middlewares/auth.middlewares.js"
 
-const router = Router();
+const dashboardrouter = Router();
 
-router.use(verifyjwt); // Apply verifyJWT middleware to all routes in this file
+dashboardrouter.use(verifyjwt); // Apply verifyJWT middleware to all routes in this file
 
-router.route("/stats").get(getChannelStats);
-router.route("/videos").get(getChannelVideos);
+dashboardrouter.route("/stats").get(getChannelStats);
+dashboardrouter.route("/videos").get(getChannelVideos);
 
-export default router
+export default dashboardrouter;

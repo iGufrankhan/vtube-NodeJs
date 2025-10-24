@@ -6,10 +6,13 @@ import {  createTweet,
 import { verifyjwt } from "../middlewares/auth.middlewares.js";
 
 
-const router = Router();
-router.use(verifyjwt);
+const tweetrouter = Router();
+tweetrouter.use(verifyjwt);
 
-router.post("/", createTweet);
-router.get("/user/:userId", getUserTweets);
-router.put("/:tweetId", updateTweet);
-router.delete("/:tweetId", deleteTweet);
+tweetrouter.post("/", createTweet);
+tweetrouter.get("/user/:userId", getUserTweets);
+tweetrouter.put("/:tweetId", updateTweet);
+tweetrouter.delete("/:tweetId", deleteTweet);
+
+
+export default tweetrouter;

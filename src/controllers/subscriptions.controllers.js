@@ -1,6 +1,6 @@
 import mongoose, {isValidObjectId} from "mongoose"
-import {User} from "../models/user.model.js"
-import { Subscription } from "../models/subscription.model.js"
+import {User} from "../models/user.models.js"
+import { Subscription } from "../models/subscription.models.js"
 import {ApiErrors} from "../utils/Apierror.js"
 import {ApiResponse} from "../utils/ApiResponse.js"
 import {asyncHandler} from "../utils/asyncHandler.js"

@@ -16,9 +16,9 @@ import {upload} from "../middlewares/multer.middlewares.js"
 import { verifyjwt } from "../middlewares/auth.middlewares.js";
 
 
-const router = Router()
+const userrouter = Router()
 
-router.route("/register").post(
+userrouter.route("/register").post(
     upload.fields([
         {
             name: "avatar",
@@ -32,19 +32,19 @@ router.route("/register").post(
     registerUser
     )
 
-router.route("/login").post(loginUser)
+userrouter.route("/login").post(loginUser)
 
 //secured routes
-router.route("/logout").post(verifyjwt,  logoutUser)
-router.route("/refresh-token").post(refreshAccessToken)
-router.route("/change-password").post(verifyjwt, changeCurrentPassword)
-router.route("/current-user").get(verifyjwt, getCurrentUser)
-router.route("/update-account").patch(verifyjwt, updateAccountDetails)
+userrouter.route("/logout").post(verifyjwt,  logoutUser)
+userrouter.route("/refresh-token").post(refreshAccessToken)
+userrouter.route("/change-password").post(verifyjwt, changeCurrentPassword)
+userrouter.route("/current-user").get(verifyjwt, getCurrentUser)
+userrouter.route("/update-account").patch(verifyjwt, updateAccountDetails)
 
-router.route("/avatar").patch(verifyjwt, upload.single("avatar"), updateUserAvatar)
-router.route("/cover-image").patch(verifyjwt, upload.single("coverImage"), updateUserCoverImage)
+userrouter.route("/avatar").patch(verifyjwt, upload.single("avatar"), updateUserAvatar)
+userrouter.route("/cover-image").patch(verifyjwt, upload.single("coverImage"), updateUserCoverImage)
 
-router.route("/c/:username").get(verifyjwt, getUserChannelProfile)
-router.route("/history").get(verifyjwt, getWatchHistory)
+userrouter.route("/c/:username").get(verifyjwt, getUserChannelProfile)
+userrouter.route("/history").get(verifyjwt, getWatchHistory)
 
-export default router
+export default userrouter

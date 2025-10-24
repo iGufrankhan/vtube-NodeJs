@@ -7,12 +7,12 @@ import {
 } from "../controllers/like.controllers.js"
 import {verifyjwt} from "../middlewares/auth.middlewares.js"
 
-const router = Router();
-router.use(verifyjwt); // Apply verifyJWT middleware to all routes in this file
+const LikeRouter = Router();
+LikeRouter.use(verifyjwt); // Apply verifyJWT middleware to all routes in this file
 
-router.route("/toggle/v/:videoId").post(toggleVideoLike);
-router.route("/toggle/c/:commentId").post(toggleCommentLike);
-router.route("/toggle/t/:tweetId").post(toggleTweetLike);
-router.route("/videos").get(getLikedVideos);
+LikeRouter.route("/toggle/v/:videoId").post(toggleVideoLike);
+LikeRouter.route("/toggle/c/:commentId").post(toggleCommentLike);
+LikeRouter.route("/toggle/t/:tweetId").post(toggleTweetLike);
+LikeRouter.route("/videos").get(getLikedVideos);
 
-export default router
+export default LikeRouter;
